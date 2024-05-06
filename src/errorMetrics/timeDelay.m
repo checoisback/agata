@@ -1,4 +1,4 @@
-function timeDelay = timeDelay(data,dataHat)
+function timeDelay = timeDelay(data,dataHat,ph)
 %timeDelay function that computes the delay of a predicted glucose trace. 
 %The time delay is computed as the time shift necessary to maximize the 
 %correlation between the two traces.
@@ -70,7 +70,54 @@ function timeDelay = timeDelay(data,dataHat)
     %Get indices having no nans in both timetables
     idx = find(~isnan(dataHat.glucose) & ~isnan(data.glucose));
     
-    %Compute metric
+    % Compute metric
     timeDelay = finddelay( data.glucose(idx), dataHat.glucose(idx)) * minutes(data.Time(2)-data.Time(1));
     
+    % remove missing data and find row indexes (TF)
+    x = [data.glucose, dataHat.glucose];
+    [~, TF] = rmmissing(x);
+
+    % split data in regions when NaN (described by TF)
+    idd = diff([true;TF;true]);
+    idb = find(idd<0);
+    ide = find(idd>0)-1;
+    regions = arrayfun(@(b,e)x(b:e,:),idb,ide,'uni',0);
+
+    count = 0;
+    for r = 1:size(regions,1)
+        
+        if length(regions{r})>288
+            
+            count = count + 1;
+            timeDelay(count,1) = getDelay(regions{r,1}(:,1),regions{r,1}(:,2),ph)*minutes(data.Time(2)-data.Time(1));
+            
+        end
+    end
+    
+    timeDelay = mean(timeDelay);
+    
+end
+
+
+
+function delay = getDelay(cgm_double,yhat_double,ph)
+
+% delay
+
+N=length(cgm_double);
+% count=0;
+for j = 0:ph
+    
+    for i = 1:N-ph-j
+        indx = i+ph+j;
+        dif(i) = (yhat_double(indx)-cgm_double(i+ph))^2;
+    end
+    count = nansum(dif);
+    delay_tmp(j+1) = (1/(N-ph+1))*count;
+    count = 0;
+    
+end
+
+[~,d] = min(delay_tmp);
+delay = d-1; % caused by we are using j+1 as index
 end

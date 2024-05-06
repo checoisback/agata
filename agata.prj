@@ -1,38 +1,30 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration build-checksum="894084430" file="/Users/cappe/Repos/agata/agata.prj" location="/Users/cappe/Repos/agata" name="agata" preferred-package-location="/Users/cappe/Repos/agata/agata/for_redistribution" preferred-package-type="package.type.app" target="target.ezdeploy.standalone" target-name="Application Compiler">
+  <configuration build-checksum="894084430" file="C:\Users\Francesco\Documents\GitHub\agata\agata.prj" location="C:\Users\Francesco\Documents\GitHub\agata" name="agata" preferred-package-location="C:\Users\cappe\Repos\agata\agata\for_redistribution" target="target.ezdeploy.standalone" target-name="Application Compiler">
     <param.appname>agata</param.appname>
-    <param.icon>${PROJECT_ROOT}/agata_resources/icon.icns</param.icon>
+    <param.icon>${PROJECT_ROOT}\agata_resources\icon.ico</param.icon>
     <param.icons>
-      <file>${PROJECT_ROOT}/agata_resources/icon_48.png</file>
-      <file>${PROJECT_ROOT}/agata_resources/icon_32.png</file>
-      <file>${PROJECT_ROOT}/agata_resources/icon_24.png</file>
-      <file>${PROJECT_ROOT}/agata_resources/icon_16.png</file>
+      <file>${PROJECT_ROOT}\agata_resources\icon_48.png</file>
+      <file>${PROJECT_ROOT}\agata_resources\icon_32.png</file>
+      <file>${PROJECT_ROOT}\agata_resources\icon_24.png</file>
+      <file>${PROJECT_ROOT}\agata_resources\icon_16.png</file>
     </param.icons>
-    <param.version>2.0</param.version>
+    <param.version>2.1.1</param.version>
     <param.authnamewatermark>Giacomo Cappon</param.authnamewatermark>
     <param.email>cappongiacomo@gmail.com</param.email>
     <param.company />
     <param.summary>AGATA</param.summary>
     <param.description>AGATA (Automated Glucose dATa Analysis) is a toolbox to analyse glucose data.</param.description>
-    <param.screenshot>${PROJECT_ROOT}/agata-logo.png</param.screenshot>
+    <param.screenshot>${PROJECT_ROOT}\agata-logo.png</param.screenshot>
     <param.guid />
-    <param.installpath.string>/agata/</param.installpath.string>
-    <param.installpath.combo>option.installpath.systemwideapp</param.installpath.combo>
-    <param.logo>${PROJECT_ROOT}/agata-logo.png</param.logo>
+    <param.installpath.string>\agata\</param.installpath.string>
+    <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
+    <param.logo>${PROJECT_ROOT}\agata-logo.png</param.logo>
     <param.install.notes />
-    <param.target.install.notes>In the following directions, replace MR/v97 by the directory on the target machine where MATLAB is installed, or MR by the directory where the MATLAB Runtime is installed.
-
-If the environment variable DYLD_LIBRARY_PATH is undefined, set it to the following string:
-
-MR/v97/runtime/maci64:MR/v97/sys/os/maci64:MR/v97/bin/maci64
-
-If it is defined, set it to the following:
-
-${DYLD_LIBRARY_PATH}:MR/v97/runtime/maci64:MR/v97/sys/os/maci64:MR/v97/bin/maci64</param.target.install.notes>
-    <param.intermediate>${PROJECT_ROOT}/agata/for_testing</param.intermediate>
-    <param.files.only>${PROJECT_ROOT}/agata/for_redistribution_files_only</param.files.only>
-    <param.output>${PROJECT_ROOT}/agata/for_redistribution</param.output>
-    <param.logdir>${PROJECT_ROOT}/agata</param.logdir>
+    <param.target.install.notes />
+    <param.intermediate>${PROJECT_ROOT}\agata\for_testing</param.intermediate>
+    <param.files.only>${PROJECT_ROOT}\agata\for_redistribution_files_only</param.files.only>
+    <param.output>${PROJECT_ROOT}\agata\for_redistribution</param.output>
+    <param.logdir>${PROJECT_ROOT}\agata</param.logdir>
     <param.enable.clean.build>false</param.enable.clean.build>
     <param.user.defined.mcr.options />
     <param.target.type>subtarget.standalone</param.target.type>
@@ -43,7 +35,7 @@ ${DYLD_LIBRARY_PATH}:MR/v97/runtime/maci64:MR/v97/sys/os/maci64:MR/v97/bin/maci6
     <param.web.mcr.name>agata_installer</param.web.mcr.name>
     <param.package.mcr.name>MyAppInstaller_mcr</param.package.mcr.name>
     <param.no.mcr.name>MyAppInstaller_app</param.no.mcr.name>
-    <param.windows.command.prompt>false</param.windows.command.prompt>
+    <param.windows.command.prompt>true</param.windows.command.prompt>
     <param.create.log>false</param.create.log>
     <param.log.file />
     <param.native.matlab>false</param.native.matlab>
@@ -54,15 +46,14 @@ ${DYLD_LIBRARY_PATH}:MR/v97/runtime/maci64:MR/v97/sys/os/maci64:MR/v97/bin/maci6
 	 
  Input Arguments 
 	 -?  print help on how to use the application 
-	 input arguments 
- Description 
- 	 AGATA (Automated Glucose dATa Analysis) is a toolbox to analyse glucose data.</param.help.text>
+	 input arguments</param.help.text>
     <unset>
       <param.company />
       <param.guid />
       <param.installpath.string />
       <param.installpath.combo />
       <param.install.notes />
+      <param.target.install.notes />
       <param.intermediate />
       <param.files.only />
       <param.output />
@@ -84,32 +75,28 @@ ${DYLD_LIBRARY_PATH}:MR/v97/runtime/maci64:MR/v97/sys/os/maci64:MR/v97/bin/maci6
       <param.example />
     </unset>
     <fileset.main>
-      <file>${PROJECT_ROOT}/agata.mlapp</file>
+      <file>${PROJECT_ROOT}\agata.mlapp</file>
     </fileset.main>
     <fileset.resources>
-      <file>${PROJECT_ROOT}/src</file>
+      <file>${PROJECT_ROOT}\src</file>
     </fileset.resources>
     <fileset.package />
     <fileset.depfun>
-      <file>${PROJECT_ROOT}/agata-logo.png</file>
-      <file>${PROJECT_ROOT}/agataCompareMultipleProfile.mlapp</file>
-      <file>${PROJECT_ROOT}/agataMultipleProfile.mlapp</file>
-      <file>${PROJECT_ROOT}/agataSingleProfile.mlapp</file>
+      <file>${PROJECT_ROOT}\agata-logo.png</file>
+      <file>${PROJECT_ROOT}\agataCompareMultipleProfile.mlapp</file>
+      <file>${PROJECT_ROOT}\agataMultipleProfile.mlapp</file>
+      <file>${PROJECT_ROOT}\agataSingleProfile.mlapp</file>
     </fileset.depfun>
     <build-deliverables>
-      <file location="${PROJECT_ROOT}/agata/for_testing" name="splash.png" optional="false">/Users/cappe/Repos/agata/agata/for_testing/splash.png</file>
-      <file location="${PROJECT_ROOT}/agata/for_testing" name="run_agata.sh" optional="false">/Users/cappe/Repos/agata/agata/for_testing/run_agata.sh</file>
-      <file location="${PROJECT_ROOT}/agata/for_testing" name="agata.app" optional="false">/Users/cappe/Repos/agata/agata/for_testing/agata.app</file>
-      <file location="${PROJECT_ROOT}/agata/for_testing" name="readme.txt" optional="true">/Users/cappe/Repos/agata/agata/for_testing/readme.txt</file>
+      <file location="${PROJECT_ROOT}\agata\for_testing" name="splash.png" optional="false">C:\Users\Francesco\Documents\GitHub\agata\agata\for_testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\agata\for_testing" name="readme.txt" optional="true">C:\Users\Francesco\Documents\GitHub\agata\agata\for_testing\readme.txt</file>
+      <file location="${PROJECT_ROOT}\agata\for_testing" name="agata.exe" optional="false">C:\Users\Francesco\Documents\GitHub\agata\agata\for_testing\agata.exe</file>
     </build-deliverables>
     <workflow />
     <matlab>
-      <root>/Applications/MATLAB_R2019bgod27.app</root>
+      <root>C:\Program Files\MATLAB\R2021a</root>
       <toolboxes>
         <toolbox name="matlabcoder" />
-        <toolbox name="embeddedcoder" />
-        <toolbox name="fixedpoint" />
-        <toolbox name="matlabhdlcoder" />
         <toolbox name="neuralnetwork" />
       </toolboxes>
       <toolbox>
@@ -118,39 +105,24 @@ ${DYLD_LIBRARY_PATH}:MR/v97/runtime/maci64:MR/v97/sys/os/maci64:MR/v97/bin/maci6
         </matlabcoder>
       </toolbox>
       <toolbox>
-        <embeddedcoder>
-          <enabled>true</enabled>
-        </embeddedcoder>
-      </toolbox>
-      <toolbox>
-        <fixedpoint>
-          <enabled>true</enabled>
-        </fixedpoint>
-      </toolbox>
-      <toolbox>
-        <matlabhdlcoder>
-          <enabled>true</enabled>
-        </matlabhdlcoder>
-      </toolbox>
-      <toolbox>
         <neuralnetwork>
           <enabled>true</enabled>
         </neuralnetwork>
       </toolbox>
     </matlab>
     <platform>
-      <unix>true</unix>
-      <mac>true</mac>
-      <windows>false</windows>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
       <win2k>false</win2k>
       <winxp>false</winxp>
       <vista>false</vista>
       <linux>false</linux>
       <solaris>false</solaris>
-      <osver>10.16</osver>
+      <osver>10.0</osver>
       <os32>false</os32>
       <os64>true</os64>
-      <arch>maci64</arch>
+      <arch>win64</arch>
       <matlab>true</matlab>
     </platform>
   </configuration>
